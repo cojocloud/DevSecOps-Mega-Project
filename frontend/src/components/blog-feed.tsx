@@ -46,10 +46,10 @@ export default function BlogFeed() {
     <div className="mx-auto my-6">
       <div className="-mx-4 flex flex-wrap">
         <div className="w-full p-4 md:w-2/3">
-          <div className="-mb-1 cursor-text text-base tracking-wide text-slate-500 dark:text-dark-tertiary">
+          <div className="dark:text-dark-tertiary -mb-1 cursor-text text-base tracking-wide text-slate-500">
             What's hot?
           </div>
-          <h1 className="mb-2 cursor-text text-xl font-semibold dark:text-dark-primary">
+          <h1 className="dark:text-dark-primary mb-2 cursor-text text-xl font-semibold">
             {selectedCategory === 'featured'
               ? 'Featured Posts'
               : `Posts related to "${selectedCategory}"`}
@@ -66,13 +66,13 @@ export default function BlogFeed() {
         </div>
         <div className="w-full p-4 md:w-1/3">
           <div className="mb-6">
-            <div className="-mb-1 cursor-text text-base tracking-wide text-light-tertiary dark:text-dark-tertiary">
+            <div className="text-light-tertiary dark:text-dark-tertiary -mb-1 cursor-text text-base tracking-wide">
               Discover by topic
             </div>
-            <h2 className="mb-2 cursor-text text-xl font-semibold dark:text-dark-primary">
+            <h2 className="dark:text-dark-primary mb-2 cursor-text text-xl font-semibold">
               Categories
             </h2>
-            <div className="flex flex-wrap gap-3 dark:rounded-lg dark:bg-dark-card dark:p-3">
+            <div className="dark:bg-dark-card flex flex-wrap gap-3 dark:rounded-lg dark:p-3">
               {categories.map((category) => (
                 <button
                   key={category}
@@ -88,10 +88,10 @@ export default function BlogFeed() {
             </div>
           </div>
           <div>
-            <div className="-mb-1 cursor-text text-base tracking-wide text-slate-500 dark:text-dark-tertiary">
+            <div className="dark:text-dark-tertiary -mb-1 cursor-text text-base tracking-wide text-slate-500">
               What's new?
             </div>
-            <h2 className="mb-2 cursor-text text-xl font-semibold dark:text-dark-primary">
+            <h2 className="dark:text-dark-primary mb-2 cursor-text text-xl font-semibold">
               Latest Posts
             </h2>
             <div className="flex flex-col gap-4">

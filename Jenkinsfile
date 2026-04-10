@@ -101,7 +101,7 @@ pipeline {
                         }
                     
                         dir('frontend'){
-                            docker_build("wanderlust-frontend-beta","${params.FRONTEND_DOCKER_TAG}","himanshugohil18")
+                            docker_build("wanderlust-frontend","${params.FRONTEND_DOCKER_TAG}","thiexco")
                         }
                 }
             }
@@ -111,7 +111,7 @@ pipeline {
             steps{
                 script{
                     docker_push("wanderlust-backend-beta","${params.BACKEND_DOCKER_TAG}","himanshugohil18") 
-                    docker_push("wanderlust-frontend-beta","${params.FRONTEND_DOCKER_TAG}","himanshugohil18")
+                    docker_push("wanderlust-frontend","${params.FRONTEND_DOCKER_TAG}","thiexco")
                 }
             }
         }

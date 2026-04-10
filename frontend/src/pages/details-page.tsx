@@ -32,10 +32,10 @@ export default function DetailsPage() {
 
   if (!loading)
     return (
-      <div className="flex-grow bg-light dark:bg-dark">
+      <div className="bg-light dark:bg-dark flex-grow">
         <div className="relative flex flex-col">
           <img src={post.imageLink} alt={post.title} className="h-80 w-full object-cover md:h-96" />
-          <div className="absolute left-0 top-0 h-full w-full bg-slate-950/60"></div>
+          <div className="absolute top-0 left-0 h-full w-full bg-slate-950/60"></div>
           <div className="absolute top-12 w-full cursor-pointer justify-start px-2 text-lg text-slate-50 md:top-20 md:px-8 md:text-xl lg:px-12 lg:text-2xl">
             <img
               src={navigateBackWhiteIcon}
@@ -50,17 +50,17 @@ export default function DetailsPage() {
               ))}
             </div>
             <h1 className="mb-4 text-xl font-semibold md:text-2xl lg:text-3xl">{post.title}</h1>
-            <p className="text-xs font-semibold text-dark-secondary md:text-sm">
+            <p className="text-dark-secondary text-xs font-semibold md:text-sm">
               {post.authorName}
             </p>
-            <p className="text-xs text-dark-secondary/80 md:text-sm">
+            <p className="text-dark-secondary/80 text-xs md:text-sm">
               {formatPostTime(post.timeOfPost)}
             </p>
           </div>
         </div>
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-y-4 px-4 py-10">
           <div>
-            <p className="leading-7 text-light-secondary dark:text-dark-secondary md:text-lg">
+            <p className="text-light-secondary dark:text-dark-secondary leading-7 md:text-lg">
               {post.description}
             </p>
           </div>

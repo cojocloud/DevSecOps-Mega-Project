@@ -47,7 +47,7 @@ pipeline {
                     
                     dir('kubernetes'){
                         sh """
-                            sed -i -e s/wanderlust-frontend-beta.*/wanderlust-frontend-beta:${params.FRONTEND_DOCKER_TAG}/g frontend.yaml
+                            sed -i -e s/wanderlust-frontend.*/wanderlust-frontend:${params.FRONTEND_DOCKER_TAG}/g frontend.yaml
                         """
                     }
                     

@@ -24,16 +24,16 @@ const ModalComponent: React.FC<ModalProps> = ({
           role="dialog"
           aria-modal="false"
         >
-          <div className="fixed inset-0 bg-slate-800/50 bg-opacity-75 transition-opacity"></div>
+          <div className="bg-opacity-75 fixed inset-0 bg-slate-800/50 transition-opacity"></div>
 
           <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
             <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-              <div className="relative transform overflow-hidden rounded-lg bg-light text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                <div className="bg-light px-4 pb-4 pt-5 dark:bg-dark sm:p-6 sm:pb-4">
+              <div className="bg-light relative transform overflow-hidden rounded-lg text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div className="bg-light dark:bg-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                   <div className="sm:flex sm:items-start">
                     <div className="mt-3 text-center sm:text-left">
                       <h3
-                        className="text-base font-semibold leading-6 text-light-primary dark:text-dark-primary"
+                        className="text-light-primary dark:text-dark-primary text-base leading-6 font-semibold"
                         id="modal-title"
                       >
                         Choose a post cover image
@@ -62,18 +62,18 @@ const ModalComponent: React.FC<ModalProps> = ({
                     </div>
                   </div>
                 </div>
-                <div className="bg-light px-4 py-3 dark:bg-dark sm:flex sm:flex-row-reverse sm:px-6">
+                <div className="bg-light dark:bg-dark px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                   <button
                     type="button"
                     name="imageLink"
-                    className="active:scale-click inline-flex w-full justify-center rounded-md bg-light-primary px-3 py-2 text-sm font-semibold text-light shadow-sm hover:bg-light-secondary dark:bg-dark-primary dark:text-dark dark:hover:bg-dark-secondary sm:ml-3 sm:w-auto"
+                    className="active:scale-click bg-light-primary text-light hover:bg-light-secondary dark:bg-dark-primary dark:text-dark dark:hover:bg-dark-secondary inline-flex w-full justify-center rounded-md px-3 py-2 text-sm font-semibold shadow-sm sm:ml-3 sm:w-auto"
                     onClick={handleSelector}
                   >
                     Select
                   </button>
                   <button
                     type="button"
-                    className="active:scale-click mt-3 inline-flex w-full justify-center rounded-md bg-light px-3 py-2 text-sm font-semibold text-light-primary shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-200 dark:bg-dark dark:text-dark-primary dark:hover:bg-dark-secondary/25 sm:mt-0 sm:w-auto"
+                    className="active:scale-click bg-light text-light-primary dark:bg-dark dark:text-dark-primary dark:hover:bg-dark-secondary/25 mt-3 inline-flex w-full justify-center rounded-md px-3 py-2 text-sm font-semibold shadow-sm ring-1 ring-slate-300 ring-inset hover:bg-slate-200 sm:mt-0 sm:w-auto"
                     onClick={() => {
                       setModal(false);
                     }}

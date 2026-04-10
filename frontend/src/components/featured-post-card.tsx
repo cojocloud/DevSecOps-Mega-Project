@@ -13,7 +13,7 @@ export default function FeaturedPostCard({
   const slug = createSlug(post.title);
   return (
     <div
-      className={`active:scale-click group flex h-auto cursor-pointer flex-col gap-2 rounded-lg bg-light dark:bg-dark-card sm:h-48 sm:flex-row`}
+      className={`active:scale-click group bg-light dark:bg-dark-card flex h-auto cursor-pointer flex-col gap-2 rounded-lg sm:h-48 sm:flex-row`}
       onClick={() => navigate(`/details-page/${slug}/${post._id}`, { state: { post } })}
       data-testid={testId}
     >
@@ -25,7 +25,7 @@ export default function FeaturedPostCard({
         />
       </div>
       <div className="flex h-full w-full flex-col gap-2 p-3 sm:w-2/3">
-        <div className="line-clamp-1 text-base font-semibold text-light-title dark:text-dark-title">
+        <div className="text-light-title dark:text-dark-title line-clamp-1 text-base font-semibold">
           {post.title}
         </div>
         <div className="flex flex-wrap gap-2">
@@ -34,11 +34,11 @@ export default function FeaturedPostCard({
           ))}
         </div>
         <div className="line-clamp-2 sm:line-clamp-3">
-          <p className="overflow-ellipsis text-light-description dark:text-dark-description">
+          <p className="text-light-description dark:text-dark-description overflow-ellipsis">
             {post.description}
           </p>
         </div>
-        <div className="flex flex-1 items-end text-xs text-light-info dark:text-dark-info">
+        <div className="text-light-info dark:text-dark-info flex flex-1 items-end text-xs">
           {post.authorName} • {formatPostTime(post.timeOfPost)}
         </div>
       </div>

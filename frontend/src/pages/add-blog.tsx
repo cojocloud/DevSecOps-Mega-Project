@@ -122,9 +122,9 @@ function AddBlog() {
   }
 
   return (
-    <div className="flex-grow cursor-default bg-slate-50 px-6 py-8 dark:bg-dark">
+    <div className="dark:bg-dark flex-grow cursor-default bg-slate-50 px-6 py-8">
       <div className="mb-4 flex justify-center">
-        <div className="flex w-[32rem] items-center justify-start space-x-4 md:w-5/6 lg:w-4/6 ">
+        <div className="flex w-[32rem] items-center justify-start space-x-4 md:w-5/6 lg:w-4/6">
           <div className="w-fit cursor-pointer">
             <img
               src={isDarkMode ? navigateBackWhiteIcon : navigateBackBlackIcon}
@@ -132,7 +132,7 @@ function AddBlog() {
               className="active:scale-click h-5 w-10"
             />
           </div>
-          <h2 className="cursor-text text-lg font-semibold text-light-primary dark:text-dark-primary md:text-xl lg:text-2xl">
+          <h2 className="text-light-primary dark:text-dark-primary cursor-text text-lg font-semibold md:text-xl lg:text-2xl">
             Create Blog
           </h2>
         </div>
@@ -141,7 +141,7 @@ function AddBlog() {
         <form onSubmit={handleSubmit} className="md:w-5/6 lg:w-2/3">
           <div className="mb-2 flex items-center">
             <label className="flex items-center">
-              <span className="px-2 text-base font-medium text-light-secondary dark:text-dark-secondary">
+              <span className="text-light-secondary dark:text-dark-secondary px-2 text-base font-medium">
                 Is this a featured blog?
               </span>
               <input
@@ -155,7 +155,7 @@ function AddBlog() {
           </div>
 
           <div className="mb-2">
-            <div className="px-2 py-1 font-medium text-light-secondary dark:text-dark-secondary">
+            <div className="text-light-secondary dark:text-dark-secondary px-2 py-1 font-medium">
               Blog title <Asterisk />
             </div>
             <input
@@ -163,43 +163,43 @@ function AddBlog() {
               name="title"
               placeholder="Travel Bucket List for this Year"
               autoComplete="off"
-              className="w-full rounded-lg bg-slate-200 p-3 placeholder:text-sm placeholder:text-light-tertiary dark:bg-dark-card dark:text-slate-50 dark:placeholder:text-dark-tertiary"
+              className="placeholder:text-light-tertiary dark:bg-dark-card dark:placeholder:text-dark-tertiary w-full rounded-lg bg-slate-200 p-3 placeholder:text-sm dark:text-slate-50"
               value={formData.title}
               onChange={handleInputChange}
             />
           </div>
 
           <div className="mb-1">
-            <div className="px-2 py-1 font-medium text-light-secondary dark:text-dark-secondary">
+            <div className="text-light-secondary dark:text-dark-secondary px-2 py-1 font-medium">
               Blog content <Asterisk />
             </div>
             <textarea
               name="description"
               placeholder="Start writing here&hellip;"
               rows={5}
-              className="w-full rounded-lg bg-slate-200 p-3 placeholder:text-sm placeholder:text-light-tertiary dark:bg-dark-card dark:text-slate-50 dark:placeholder:text-dark-tertiary"
+              className="placeholder:text-light-tertiary dark:bg-dark-card dark:placeholder:text-dark-tertiary w-full rounded-lg bg-slate-200 p-3 placeholder:text-sm dark:text-slate-50"
               value={formData.description}
               onChange={handleInputChange}
             />
           </div>
 
           <div className="mb-2">
-            <div className="px-2 py-1 font-medium text-light-secondary dark:text-dark-secondary">
+            <div className="text-light-secondary dark:text-dark-secondary px-2 py-1 font-medium">
               Author name <Asterisk />
             </div>
             <input
               type="text"
               name="authorName"
               placeholder="Shree Sharma"
-              className="w-full rounded-lg bg-slate-200 p-3 placeholder:text-sm placeholder:text-light-tertiary dark:bg-dark-card dark:text-slate-50 dark:placeholder:text-dark-tertiary"
+              className="placeholder:text-light-tertiary dark:bg-dark-card dark:placeholder:text-dark-tertiary w-full rounded-lg bg-slate-200 p-3 placeholder:text-sm dark:text-slate-50"
               value={formData.authorName}
               onChange={handleInputChange}
             />
           </div>
 
-          <div className="px-2 py-1 font-medium text-light-secondary dark:text-dark-secondary">
+          <div className="text-light-secondary dark:text-dark-secondary px-2 py-1 font-medium">
             Blog cover image
-            <span className="text-xs tracking-wide text-dark-tertiary">
+            <span className="text-dark-tertiary text-xs tracking-wide">
               &nbsp;(jpg/png/webp)&nbsp;
             </span>
             <Asterisk />
@@ -211,13 +211,13 @@ function AddBlog() {
               name="imageLink"
               placeholder="https://&hellip;"
               autoComplete="off"
-              className="w-3/4 rounded-lg bg-slate-200 p-3 placeholder:text-sm placeholder:text-light-tertiary dark:bg-dark-card dark:text-slate-50 dark:placeholder:text-dark-tertiary lg:w-10/12"
+              className="placeholder:text-light-tertiary dark:bg-dark-card dark:placeholder:text-dark-tertiary w-3/4 rounded-lg bg-slate-200 p-3 placeholder:text-sm lg:w-10/12 dark:text-slate-50"
               value={formData.imageLink}
               onChange={handleInputChange}
             />
             <button
               type="button"
-              className="lg:text-md active:scale-click w-1/4 rounded-lg bg-light-primary text-xs text-slate-50 hover:bg-light-primary/80 dark:bg-dark-primary dark:text-dark-card dark:hover:bg-dark-secondary/80 md:text-sm lg:w-2/12 lg:px-4 lg:py-3"
+              className="lg:text-md active:scale-click bg-light-primary hover:bg-light-primary/80 dark:bg-dark-primary dark:text-dark-card dark:hover:bg-dark-secondary/80 w-1/4 rounded-lg text-xs text-slate-50 md:text-sm lg:w-2/12 lg:px-4 lg:py-3"
               onClick={() => {
                 setmodal(true);
               }}
@@ -226,14 +226,14 @@ function AddBlog() {
             </button>
           </div>
           <div className="mb-4 flex flex-col">
-            <label className="px-2 pb-1 font-medium text-light-secondary dark:text-dark-secondary md:mr-4 md:w-fit">
+            <label className="text-light-secondary dark:text-dark-secondary px-2 pb-1 font-medium md:mr-4 md:w-fit">
               Categories
-              <span className="text-xs tracking-wide text-dark-tertiary">
+              <span className="text-dark-tertiary text-xs tracking-wide">
                 &nbsp;(max 3 categories)&nbsp;
               </span>
               <Asterisk />
             </label>
-            <div className="flex flex-wrap gap-3 rounded-lg p-2 dark:bg-dark-card dark:p-3">
+            <div className="dark:bg-dark-card flex flex-wrap gap-3 rounded-lg p-2 dark:p-3">
               {categories.map((category, index) => (
                 <span key={`${category}-${index}`} onClick={() => handleCategoryClick(category)}>
                   <CategoryPill
@@ -248,7 +248,7 @@ function AddBlog() {
 
           <button
             type="submit"
-            className="active:scale-click flex w-full items-center justify-center rounded-lg bg-light-primary px-12 py-3 text-base font-semibold text-light hover:bg-light-primary/80 dark:bg-dark-primary dark:text-dark-card dark:hover:bg-dark-secondary/80 md:mx-1 md:w-fit"
+            className="active:scale-click bg-light-primary text-light hover:bg-light-primary/80 dark:bg-dark-primary dark:text-dark-card dark:hover:bg-dark-secondary/80 flex w-full items-center justify-center rounded-lg px-12 py-3 text-base font-semibold md:mx-1 md:w-fit"
           >
             Post blog
           </button>

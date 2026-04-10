@@ -14,7 +14,7 @@ export default function LatestPostCard({
   const slug = createSlug(post.title);
   return (
     <div
-      className={`active:scale-click cursor-pointer rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-none dark:bg-dark-card`}
+      className={`active:scale-click dark:bg-dark-card cursor-pointer rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-none`}
       onClick={() => navigate(`/details-page/${slug}/${post._id}`, { state: { post } })}
       data-testid={testId}
     >
@@ -26,10 +26,10 @@ export default function LatestPostCard({
         </div>
         <img src={linkIcon} alt={post.title} className="h-3 w-3" />
       </div>
-      <div className="mb-2 line-clamp-1 font-semibold text-light-title dark:text-dark-title">
+      <div className="text-light-title dark:text-dark-title mb-2 line-clamp-1 font-semibold">
         {post.title}
       </div>
-      <div className="text-xs text-light-info dark:text-dark-info">
+      <div className="text-light-info dark:text-dark-info text-xs">
         {post.authorName} • {formatPostTime(post.timeOfPost)}
       </div>
     </div>

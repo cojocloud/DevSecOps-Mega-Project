@@ -3,13 +3,13 @@ import { Skeleton } from '@/components/ui/skeleton';
 export const FeaturedPostCardSkeleton = () => {
   return (
     <div
-      className="flex flex-col rounded-lg bg-light dark:bg-dark-card sm:flex-row"
+      className="bg-light dark:bg-dark-card flex flex-col rounded-lg sm:flex-row"
       data-testid="featurepostcardskeleton"
     >
       {/* Image */}
       <div className="mb-4 w-full sm:mb-0 sm:w-1/3">
         <Skeleton
-          className="h-50 w-full rounded-lg bg-slate-200 object-cover shadow-lg dark:bg-slate-700 sm:h-full"
+          className="h-50 w-full rounded-lg bg-slate-200 object-cover shadow-lg sm:h-full dark:bg-slate-700"
           style={{ height: '190px' }}
         />
       </div>
@@ -32,7 +32,7 @@ export const FeaturedPostCardSkeleton = () => {
         </div>
 
         {/* Description */}
-        <Skeleton className="mb-4 h-10 w-full bg-slate-200 dark:bg-slate-700 sm:h-16 lg:h-16" />
+        <Skeleton className="mb-4 h-10 w-full bg-slate-200 sm:h-16 lg:h-16 dark:bg-slate-700" />
 
         {/* Author and Time */}
         <div className="flex items-end">

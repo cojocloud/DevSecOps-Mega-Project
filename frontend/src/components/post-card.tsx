@@ -14,7 +14,7 @@ export default function PostCard({ post, testId = 'postcard' }: { post: Post } &
       data-testid={testId}
     >
       <div
-        className={`mb-4 cursor-pointer rounded-lg bg-light shadow-md dark:bg-dark-card ${'md:mr-8 md:mt-4'}`}
+        className={`bg-light dark:bg-dark-card mb-4 cursor-pointer rounded-lg shadow-md ${'md:mt-4 md:mr-8'}`}
         onClick={() => navigate(`/details-page/${slug}/${post._id}`, { state: { post } })}
       >
         <div className="h-48 w-full overflow-hidden">
@@ -25,13 +25,13 @@ export default function PostCard({ post, testId = 'postcard' }: { post: Post } &
           />
         </div>
         <div className="p-3">
-          <div className="mb-1 text-xs text-light-info dark:text-dark-info">
+          <div className="text-light-info dark:text-dark-info mb-1 text-xs">
             {post.authorName} • {formatPostTime(post.timeOfPost)}
           </div>
-          <h2 className="mb-2 line-clamp-1 text-base font-semibold text-light-title dark:text-dark-title">
+          <h2 className="text-light-title dark:text-dark-title mb-2 line-clamp-1 text-base font-semibold">
             {post.title}
           </h2>
-          <p className="line-clamp-2 text-sm text-light-description dark:text-dark-description">
+          <p className="text-light-description dark:text-dark-description line-clamp-2 text-sm">
             {post.description}
           </p>
           <div className="mt-4 flex flex-wrap gap-2">

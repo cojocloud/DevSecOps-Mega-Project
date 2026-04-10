@@ -33,8 +33,8 @@ function ThemeToggle() {
         <div
           className={` ${
             isDarkTheme
-              ? 'translate-x-8 bg-dark-theme-foreground'
-              : 'translate-x-0 bg-light-theme-foreground'
+              ? 'bg-dark-theme-foreground translate-x-8'
+              : 'bg-light-theme-foreground translate-x-0'
           } h-6 w-6 rounded-full bg-black px-1 py-1 duration-300`}
         >
           <img src={`${isDarkTheme ? Moon : Sun}`} />

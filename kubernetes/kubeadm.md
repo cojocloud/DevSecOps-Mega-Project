@@ -1,25 +1,31 @@
-##  Setup Kubernetes [Kubeadm] Cluster (Version: 1.29)
+## Setup Kubernetes [Kubeadm] Cluster (Version: 1.29)
 
 ### On both master & worker nodes
-- <i>  Become root user </i>
+
+- <i> Become root user </i>
+
 ```bash
 sudo su
 ```
 
-- <i>  Updating System Packages </i>
+- <i> Updating System Packages </i>
+
 ```bash
 sudo apt-get update
 ```
 
 - <i> Installing Docker </i>
+
 ```bash
 sudo apt install docker.io -y
 ```
+
 ```bash
 sudo chmod 777 /var/run/docker.sock
 ```
 
 - <i> Create a shell script 1.sh and paste the below code and run it :
+
 ```bash
 #!/bin/bash
 # disable swap
@@ -74,7 +80,9 @@ sudo systemctl start kubelet
 ```
 
 ### On Master node
+
 - <i> Create a shell script 2.sh and paste the below code and run it </i>
+
 ```bash
 sudo kubeadm config images pull
 
@@ -92,10 +100,9 @@ kubeadm token create --print-join-command
 ```
 
 ### On Worker node
+
 - <i> Paste the join command you got from the master node and append --v=5 at the end </i>
 
 ```bash
 <join-command> --v=5
 ```
-
-

@@ -9,5 +9,9 @@
     "install-frontend": "cd frontend && npm i",
     "install-backend": "cd backend && npm i",
     "installer": "npm i && npm run install-backend && npm run install-frontend"
+  },
+  "devDependencies": {
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "tailwindcss": "^4.2.2"
   }
 }
