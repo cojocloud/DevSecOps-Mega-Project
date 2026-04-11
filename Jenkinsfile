@@ -48,7 +48,10 @@ pipeline {
         stage("OWASP: Dependency check"){
             steps{
                 script{
-                    owasp_dependency()
+                    withCredentials([string(credentialsId: 'NVD-API-KEY', variable: 'NVD_API_KEY')]) {
+                        dependencyCheck additionalArguments: "--nvdApiKey ${NVD_API_KEY} --nvdDatafeedUrl https://nvd.nist.gov/feeds/json/cve/1.1/", odcInstallation: 'OWASP'
+                        dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+                    }
                 }
             }
         }
