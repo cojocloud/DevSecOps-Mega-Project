@@ -16,10 +16,9 @@ pipeline {
         stage("Validate Parameters") {
             steps {
                 script {
-                    env.FRONTEND_DOCKER_TAG = params.FRONTEND_DOCKER_TAG ?: sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
-                    env.BACKEND_DOCKER_TAG = params.BACKEND_DOCKER_TAG ?: sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
-                    echo "Frontend tag: ${env.FRONTEND_DOCKER_TAG}"
-                    echo "Backend tag: ${env.BACKEND_DOCKER_TAG}"
+                    if (params.FRONTEND_DOCKER_TAG == '' || params.BACKEND_DOCKER_TAG == '') {
+                        error("FRONTEND_DOCKER_TAG and BACKEND_DOCKER_TAG must be provided.")
+                    }
                 }
             }
         }
@@ -102,11 +101,11 @@ pipeline {
             steps{
                 script{
                         dir('backend'){
-                            docker_build("wanderlust-backend-beta","${env.BACKEND_DOCKER_TAG}","thiexco")
+                            docker_build("wanderlust-backend-beta","${params.BACKEND_DOCKER_TAG}","thiexco")
                         }
 
                         dir('frontend'){
-                            docker_build("wanderlust-frontend","${env.FRONTEND_DOCKER_TAG}","thiexco")
+                            docker_build("wanderlust-frontend","${params.FRONTEND_DOCKER_TAG}","thiexco")
                         }
                 }
             }
@@ -115,8 +114,8 @@ pipeline {
         stage("Docker: Push to DockerHub"){
             steps{
                 script{
-                    docker_push("wanderlust-backend-beta","${env.BACKEND_DOCKER_TAG}","thiexco")
-                    docker_push("wanderlust-frontend","${env.FRONTEND_DOCKER_TAG}","thiexco")
+                    docker_push("wanderlust-backend-beta","${params.BACKEND_DOCKER_TAG}","thiexco")
+                    docker_push("wanderlust-frontend","${params.FRONTEND_DOCKER_TAG}","thiexco")
                 }
             }
         }
@@ -127,8 +126,8 @@ pipeline {
             script {
                 try {
                     build job: "Wanderlust-CD", wait: false, propagate: false, parameters: [
-                        string(name: 'FRONTEND_DOCKER_TAG', value: "${env.FRONTEND_DOCKER_TAG}"),
-                        string(name: 'BACKEND_DOCKER_TAG', value: "${env.BACKEND_DOCKER_TAG}")
+                        string(name: 'FRONTEND_DOCKER_TAG', value: "${params.FRONTEND_DOCKER_TAG}"),
+                        string(name: 'BACKEND_DOCKER_TAG', value: "${params.BACKEND_DOCKER_TAG}")
                     ]
                 } catch (Exception e) {
                     echo "Wanderlust-CD job not found or failed to trigger: ${e.message}"
