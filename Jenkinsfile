@@ -4,6 +4,7 @@ pipeline {
     
     environment{
         SONAR_HOME = tool "Sonar"
+        DOCKER_HOST = "unix:///var/run/docker.sock"
     }
     
     parameters {
