@@ -32,7 +32,7 @@ pipeline {
         stage('Git: Code Checkout') {
             steps {
                 script{
-                    code_checkout("git@github.com:cojocloud/DevSecOps-Mega-Project.git","main")
+                    code_checkout("https://github.com/cojocloud/DevSecOps-Mega-Project.git","main")
                 }
             }
         }
