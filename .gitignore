@@ -20,6 +20,8 @@ logs/
 ############################################
 .env
 .env.*
+!frontend/.env.docker
+!backend/.env.docker
 *.pem
 *.key
 *.crt
